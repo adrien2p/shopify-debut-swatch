@@ -1,5 +1,7 @@
 # shopify-debut-swatch
 
+![swatch result on shopify](swatch-result.png)
+
 I did that repository because there is only poor and outaded documentation about that subject.
 The purpose of that repo is to help anybody to add `swatch` for color, size, etc... to his own `debut` theme on Shopify.
 
@@ -341,6 +343,4 @@ Now that you have your snippet and the style, you can update the product-templat
 
 ## Conclusion
 
-Now you should be able to see the `swatch` element on your product page such as the image below
-
-![swatch result on shopify](swatch-result.png)
+Now you should be able to see the `swatch` element on your product page such as the image at the beginning of that readme!
