@@ -286,14 +286,35 @@ Now that you have your snippet and the style, you can update the product-templat
 
 - On the left side search for `product-template.liquid`
 - Search in the document for `unless product.has_only_default_variant`
-- Comment the block `<div class="product-form__controls-group">`
 
-> Now you can paste the code below.
+> Now you can paste the code below to replace the block that you found.
 
 ```liquid
-{% if product.available %}
-    {% include 'swatch' with 'Color' %}
-{% endif %}
+{% unless product.has_only_default_variant %}
+  <div class="product-form__controls-group">
+    {% for option in product.options_with_values %}
+      {% if option.name != 'Color' %}
+        <div class="selector-wrapper js product-form__item">
+            <label for="SingleOptionSelector-{{ forloop.index0 }}">
+              {{ option.name }}
+            </label>
+            <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
+                    id="SingleOptionSelector-{{ forloop.index0 }}"
+                    data-index="option{{ forloop.index }}"
+                    >
+              {% for value in option.values %}
+              <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+              {% endfor %}
+            </select>
+        </div>
+       {% else %}
+       <!-- SWATCHES: uncomment the code above to rollback and remove the code below -->
+         {% include 'swatch' with 'Color' %}
+         <!-- END SWATCHES -->
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endunless %}
 ```
 
 ### Step 4: Edit the theme.js
