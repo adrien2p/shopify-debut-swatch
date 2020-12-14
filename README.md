@@ -1,6 +1,8 @@
 # shopify-debut-swatch
 
-![swatch result on shopify](swatch-result.png)
+<p align="center">
+  <img width="460" height="300" src="swatch-result.gif" alt="shopify-debut-swatch GIF">
+</p>
 
 I did that repository because there is only poor and outaded documentation about that subject.
 The purpose of that repo is to help anybody to add `swatch` for color, size, etc... to his own `debut` theme on Shopify.
