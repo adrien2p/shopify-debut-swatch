@@ -329,7 +329,7 @@ Now that you have your snippet and the style, you can update the product-templat
 - Search in the document for `_getVariantOptionList: function(variantOptions)`
 - Replace `variantOption.value` with `variantOption.value.split(' - ')[0]`
 
-### Step 4: Edit the theme.js
+### Step 5: Edit the cart-template.liquid
 
 > In order that in your cart the colors are display correctly follow the next steps.
 
@@ -337,7 +337,7 @@ Now that you have your snippet and the style, you can update the product-templat
 - Search in the document for `product-details__item product-details__item--variant-option`
 - Replace `{{ option.value }}` with `{{ option.value | split: ' - ' | first | handle }}`
 
-### Step 5: update your products
+### Step 6: update your products
 
 - Go to products
 - Edit a product which contains color variant
